@@ -17,7 +17,8 @@ const fontColor = {
   grey1: "#6C757D",
   grey2: "#ccc",
 
-  inactive: "#FFFFFFB2",
+  "inactive-light": "#000000B2",
+  "inactive-dark": "#FFFFFFB2",
 };
 
 const backgroundColor = {

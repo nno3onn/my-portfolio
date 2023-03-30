@@ -8,18 +8,17 @@ export const GlobalStyle = createGlobalStyle`${css`
     text-decoration: none;
     color: inherit;
   }
+
   * {
-    box-sizing: boerder-box;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    background-color: rgba(20, 20, 20, 1);
+    box-sizing: border-box;
   }
 
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
+  body {
+    font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 16px;
+    color: #444;
+
+    transition: all 0.3s ease-in-out;
   }
 `}`;
