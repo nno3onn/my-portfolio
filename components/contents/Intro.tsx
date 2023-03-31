@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImage from "../../public/developer.jpg";
+import backgroundImage from "../../public/images/developer.jpg";
 import { useTheme } from "next-themes";
 import { IntroWrapper } from "../wrapper/ContentsWrapper";
 

@@ -26,6 +26,7 @@ const backgroundColor = {
   black: "#222",
   orange: "#f4623a",
   "hover-orange": "#ec2d13",
+  yellow: "#f9c51d",
 
   "box-shadow": "1rem 1rem 1rem 0 rgba(68,68,68,.2)",
 };
