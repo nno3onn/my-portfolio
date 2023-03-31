@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ContentsWrapper } from "./Contents";
 import backgroundImage from "../../public/developer.jpg";
 import { useTheme } from "next-themes";
+import { IntroWrapper } from "../wrapper/ContentsWrapper";
 
 const Intro = () => {
   const { theme } = useTheme();
@@ -9,23 +9,21 @@ const Intro = () => {
   return (
     <IntroContainer style={{ backgroundImage: `url(${backgroundImage.src})` }}>
       <BackgroundBlur isDark={theme === "dark"}>
-        <ContentsWrapper>
-          <IntroWrapper>
-            <Title isDark={theme === "dark"}>
-              <h1>- 허다은 -</h1>
-              <h1>웹 프론트엔드 개발자</h1>
-            </Title>
+        <IntroWrapper>
+          <Title isDark={theme === "dark"}>
+            <h1>- 허다은 -</h1>
+            <h1>웹 프론트엔드 개발자</h1>
+          </Title>
 
-            <Divider />
+          <Divider />
 
-            <Paragraph isDark={theme === "dark"}>
-              <p>안녕하세요.</p>
-              <p>저는 코드 한 줄에도 논리적인 견해를 가지고 작성하는 개발자가 되고 싶습니다.</p>
-            </Paragraph>
+          <Paragraph isDark={theme === "dark"}>
+            <p>안녕하세요.</p>
+            <p>코드 한 줄에도 논리적인 견해를 가지고 작성하는 개발자가 되고 싶습니다.</p>
+          </Paragraph>
 
-            <MoreButton>더 알아보기 ↓</MoreButton>
-          </IntroWrapper>
-        </ContentsWrapper>
+          <MoreButton>더 알아보기 ↓</MoreButton>
+        </IntroWrapper>
       </BackgroundBlur>
     </IntroContainer>
   );
@@ -34,7 +32,7 @@ const Intro = () => {
 const IntroContainer = styled.div`
   position: relative;
   z-index: 1;
-  width: 100vw;
+  width: 100%;
   height: 600px;
 
   display: flex;
@@ -49,10 +47,6 @@ const BackgroundBlur = styled.div<{ isDark: boolean }>`
   width: 100%;
   height: 100%;
   background-color: ${({ isDark }) => (isDark ? "#444444b2" : "#ffffffb2")};
-`;
-
-const IntroWrapper = styled.div`
-  padding: 136px 32px 64px;
 `;
 
 const Title = styled.div<{ isDark: boolean }>`
@@ -86,6 +80,13 @@ const MoreButton = styled.div`
   border-radius: 25px;
   color: ${({ theme }) => theme.fontColor.white};
   background-color: ${({ theme }) => theme.backgroundColor.orange};
+  transition: all 0.2s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.backgroundColor["hover-orange"]};
+  }
 `;
 
 export default Intro;

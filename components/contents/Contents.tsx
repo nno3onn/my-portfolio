@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import About from "./About";
 import Archiving from "./Archiving";
 import Career from "./Career";
 import Intro from "./Intro";
@@ -9,6 +10,7 @@ const Contents = () => {
   return (
     <ContentsContainer>
       <Intro />
+      <About />
       <Skills />
       <Archiving />
       <Projects />
@@ -18,15 +20,8 @@ const Contents = () => {
 };
 
 const ContentsContainer = styled.div`
-  width: 100vw;
-
   display: flex;
   flex-direction: column;
-`;
-
-export const ContentsWrapper = styled.div`
-  width: 100%;
-  max-width: 1158px;
 `;
 
 export default Contents;
