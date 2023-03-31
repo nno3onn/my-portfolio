@@ -26,16 +26,16 @@ const Skills = () => {
             <Image width="270" src={backendImage} alt="backend skills" />
           </SkillsWrapper>
 
+          <SkillsWrapper title="Communication">
+            <Image width="200" src={communicationImage} alt="communication skills" />
+          </SkillsWrapper>
+
           <SkillsWrapper title="Version Control">
             <Image width="250" src={versionImage} alt="frontend skills" />
           </SkillsWrapper>
 
           <SkillsWrapper title="Deployment">
             <Image width="270" src={deploymentImage} alt="deployment skills" />
-          </SkillsWrapper>
-
-          <SkillsWrapper title="Communication">
-            <Image width="200" src={communicationImage} alt="communication skills" />
           </SkillsWrapper>
         </SkillsList>
       </ContentsWrapper>
