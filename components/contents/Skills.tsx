@@ -54,6 +54,10 @@ const SkillsList = styled.div`
   @media (max-width: 992px) {
     column-count: 2;
   }
+
+  @media (max-width: 768px) {
+    column-count: 1;
+  }
 `;
 
 export default Skills;
