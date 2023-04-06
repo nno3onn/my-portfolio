@@ -10,7 +10,7 @@ const useScrollTop = () => {
 
   useEffect(() => {
     updateIsScrollTop();
-  });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", updateIsScrollTop);
