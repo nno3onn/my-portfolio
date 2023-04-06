@@ -12,6 +12,8 @@ const Header = () => {
   const scrollDirection = useScrollDirection();
   const isScrollTop = useScrollTop();
 
+  console.log(isScrollTop);
+
   return (
     <HeaderContainer isDark={isDark} isScrollTop={isScrollTop} scrollDirection={scrollDirection}>
       <HeaderContent>
@@ -60,7 +62,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
   box-shadow: ${({ theme, isScrollTop }) => (isScrollTop ? "none" : theme.backgroundColor["header-box-shadow"])};
 
   position: fixed;
-  top: ${({ scrollDirection }) => (scrollDirection === "up" ? -72 : 0)}px;
+  top: ${({ scrollDirection, isScrollTop }) => (isScrollTop || scrollDirection === "down" ? 0 : -72)}px;
   z-index: 2;
 
   display: flex;
