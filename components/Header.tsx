@@ -12,8 +12,6 @@ const Header = () => {
   const scrollDirection = useScrollDirection();
   const isScrollTop = useScrollTop();
 
-  console.log(isScrollTop);
-
   return (
     <HeaderContainer isDark={isDark} isScrollTop={isScrollTop} scrollDirection={scrollDirection}>
       <HeaderContent>
