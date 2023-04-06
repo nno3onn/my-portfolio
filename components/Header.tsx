@@ -2,12 +2,18 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import styled from "styled-components";
 import DarkModeToggleButton from "./DarkModeToggleButton";
+import useScrollDirection, { DirectionType } from "@/hooks/useScrollDirection";
+import useScrollTop from "@/hooks/useScrollTop";
 
 const Header = () => {
   const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  const scrollDirection = useScrollDirection();
+  const isScrollTop = useScrollTop();
 
   return (
-    <HeaderContainer>
+    <HeaderContainer isDark={isDark} isScrollTop={isScrollTop} scrollDirection={scrollDirection}>
       <HeaderContent>
         <Title href="/" type={theme}>
           nno3onn&#39;s Portfolio
@@ -35,15 +41,32 @@ const Header = () => {
   );
 };
 
-const HeaderContainer = styled.div`
+interface HeaderContainerProps {
+  isDark: boolean;
+  isScrollTop: boolean;
+  scrollDirection: DirectionType;
+}
+
+const setBackgroundColor = (theme: any, isScrollTop: boolean, isDark: boolean) => {
+  if (isScrollTop) {
+    return "transparent";
+  }
+  return theme.backgroundColor[isDark ? "black" : "white"];
+};
+
+const HeaderContainer = styled.div<HeaderContainerProps>`
   width: 100vw;
-  background-color: transparent;
+  background-color: ${({ theme, isScrollTop, isDark }) => setBackgroundColor(theme, isScrollTop, isDark)};
+  box-shadow: ${({ theme, isScrollTop }) => (isScrollTop ? "none" : theme.backgroundColor["header-box-shadow"])};
 
   position: fixed;
+  top: ${({ scrollDirection }) => (scrollDirection === "up" ? -72 : 0)}px;
   z-index: 2;
 
   display: flex;
   justify-content: center;
+
+  transition: top 0.2s ease-in-out;
 `;
 
 const HeaderContent = styled.div`
