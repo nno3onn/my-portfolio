@@ -38,13 +38,14 @@ const DarkButton = styled.button<{ isDark: boolean }>`
 
   cursor: pointer;
 
+  svg {
+    transition: all 0.2s ease-in-out;
+  }
+
   &:hover {
     svg {
       fill: ${({ isDark }) => (isDark ? "yellow" : "orange")};
     }
-  }
-  svg {
-    transition: all 0.2s ease-in-out;
   }
 `;
 

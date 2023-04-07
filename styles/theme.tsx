@@ -28,7 +28,7 @@ const backgroundColor = {
   "hover-orange": "#ec2d13",
   yellow: "#f9c51d",
 
-  "header-box-shadow": "2px 2px 6px rgba(68,68,68,.2)",
+  "header-box-shadow": "2px 2px 2px rgba(68,68,68,.2)",
   "box-shadow": "1rem 1rem 1rem rgba(68,68,68,.2)",
 };
 

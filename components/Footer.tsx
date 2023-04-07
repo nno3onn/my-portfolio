@@ -47,10 +47,11 @@ const FooterBody = styled.div`
 `;
 
 const IconWrapper = styled.div<{ isDark: boolean }>`
+  cursor: pointer;
+
   path {
     fill: ${({ theme, isDark }) => theme.backgroundColor[isDark ? "white" : "black"]};
   }
-  cursor: pointer;
 
   &:hover {
     path {
