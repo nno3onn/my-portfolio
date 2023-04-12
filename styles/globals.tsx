@@ -13,6 +13,12 @@ export const GlobalStyle = createGlobalStyle`${css`
     box-sizing: border-box;
   }
 
+  ul,
+  li {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
   body {
     font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
       sans-serif;
