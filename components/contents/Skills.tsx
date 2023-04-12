@@ -1,44 +1,44 @@
-import { useTheme } from "next-themes";
 import styled from "styled-components";
-import { ContentsWrapper } from "../wrapper/ContentsWrapper";
-import SkillsWrapper from "../wrapper/SkillsWrapper";
-import { Title } from "../wrapper/Title";
 import Image from "next/image";
 import frontendImage from "/public/images/frontend.png";
 import versionImage from "/public/images/version.png";
 import backendImage from "/public/images/backend.png";
 import deploymentImage from "/public/images/deployment.png";
 import communicationImage from "/public/images/communication.png";
+import { SectionWrapper } from "../wrapper/SectionWrapper";
+import ContentsWrapper from "../wrapper/ContentsWrapper";
+import TitleWrapper from "../wrapper/TitleWrapper";
+
+const ContentsTitleWrapper = (title: string) => <TitleContainer>{title}</TitleContainer>;
 
 const Skills = () => {
-  const { theme } = useTheme();
-
   return (
     <SkillsContainer>
-      <ContentsWrapper>
-        <Title isDark={theme === "dark"}>SKILLS</Title>
+      <SectionWrapper>
+        <TitleWrapper>SKILLS</TitleWrapper>
+
         <SkillsList>
-          <SkillsWrapper title="Frontend">
+          <ContentsWrapper width={318} title={ContentsTitleWrapper("Frontend")}>
             <Image width="270" src={frontendImage} alt="frontend skills" />
-          </SkillsWrapper>
+          </ContentsWrapper>
 
-          <SkillsWrapper title="Backend">
+          <ContentsWrapper width={318} title={ContentsTitleWrapper("Backend")}>
             <Image width="270" src={backendImage} alt="backend skills" />
-          </SkillsWrapper>
+          </ContentsWrapper>
 
-          <SkillsWrapper title="Communication">
+          <ContentsWrapper width={318} title={ContentsTitleWrapper("Communication")}>
             <Image width="200" src={communicationImage} alt="communication skills" />
-          </SkillsWrapper>
+          </ContentsWrapper>
 
-          <SkillsWrapper title="Version Control">
-            <Image width="250" src={versionImage} alt="frontend skills" />
-          </SkillsWrapper>
+          <ContentsWrapper width={318} title={ContentsTitleWrapper("Version Control")}>
+            <Image width="250" src={versionImage} alt="version control skills" />
+          </ContentsWrapper>
 
-          <SkillsWrapper title="Deployment">
+          <ContentsWrapper width={318} title={ContentsTitleWrapper("Deployment")}>
             <Image width="270" src={deploymentImage} alt="deployment skills" />
-          </SkillsWrapper>
+          </ContentsWrapper>
         </SkillsList>
-      </ContentsWrapper>
+      </SectionWrapper>
     </SkillsContainer>
   );
 };
@@ -51,13 +51,19 @@ const SkillsList = styled.div`
   column-count: 3;
   column-gap: 40px;
 
-  @media (max-width: 992px) {
-    column-count: 2;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     column-count: 1;
   }
+`;
+
+const TitleContainer = styled.div`
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+
+  font-weight: bold;
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  color: ${({ theme }) => theme.backgroundColor.orange};
+  border-bottom: 1px solid ${({ theme }) => theme.fontColor.grey2};
 `;
 
 export default Skills;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import backgroundImage from "/public/images/developer.jpg";
 import { useTheme } from "next-themes";
-import { IntroWrapper } from "../wrapper/ContentsWrapper";
+import { SectionWrapper } from "../wrapper/SectionWrapper";
 
 const Intro = () => {
   const { theme } = useTheme();
@@ -9,7 +9,7 @@ const Intro = () => {
   return (
     <IntroContainer style={{ backgroundImage: `url(${backgroundImage.src})` }}>
       <BackgroundBlur isDark={theme === "dark"}>
-        <IntroWrapper>
+        <SectionWrapper>
           <Title isDark={theme === "dark"}>
             <h1>- 허다은 -</h1>
             <h1>웹 프론트엔드 개발자</h1>
@@ -23,7 +23,7 @@ const Intro = () => {
           </Paragraph>
 
           <MoreButton>더 알아보기 ↓</MoreButton>
-        </IntroWrapper>
+        </SectionWrapper>
       </BackgroundBlur>
     </IntroContainer>
   );
