@@ -16,6 +16,7 @@ const fontColor = {
   white: "#fff",
   grey1: "#6C757D",
   grey2: "#ccc",
+  blue: "#258dbb",
 
   "inactive-light": "#000000B2",
   "inactive-dark": "#FFFFFFB2",
@@ -24,9 +25,11 @@ const fontColor = {
 const backgroundColor = {
   white: "#fff",
   black: "#222",
+  grey: "#f5f5f5",
   orange: "#f4623a",
   "hover-orange": "#ec2d13",
   yellow: "#f9c51d",
+  blue: "#1d809f",
 
   "header-box-shadow": "2px 2px 2px rgba(68,68,68,.2)",
   "box-shadow": "1rem 1rem 1rem rgba(68,68,68,.2)",
