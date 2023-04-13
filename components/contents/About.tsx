@@ -1,16 +1,16 @@
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import styled from "styled-components";
-import { ContentsWrapper } from "../wrapper/ContentsWrapper";
-import { Title } from "../wrapper/Title";
+import { SectionWrapper } from "../common/SectionWrapper";
+import SectionTitleWrapper from "../common/SectionTitleWrapper";
 
 const About = () => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <ContentsWrapper>
-      <Title isDark={isDark}>ABOUT ME</Title>
+    <SectionWrapper>
+      <SectionTitleWrapper>ABOUT ME</SectionTitleWrapper>
 
       <InfoWrapper isDark={isDark}>
         <ItemWrapper>
@@ -87,7 +87,7 @@ const About = () => {
           </TextWrapper>
         </ItemWrapper>
       </InfoWrapper>
-    </ContentsWrapper>
+    </SectionWrapper>
   );
 };
 

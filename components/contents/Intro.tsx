@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import backgroundImage from "/public/images/developer.jpg";
+import backgroundImage from "/public/images/skills/developer.jpg";
 import { useTheme } from "next-themes";
-import { SectionWrapper } from "../wrapper/SectionWrapper";
+import { SectionWrapper } from "../common/SectionWrapper";
 
 const Intro = () => {
   const { theme } = useTheme();

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import Image from "next/image";
-import frontendImage from "/public/images/frontend.png";
-import versionImage from "/public/images/version.png";
-import backendImage from "/public/images/backend.png";
-import deploymentImage from "/public/images/deployment.png";
-import communicationImage from "/public/images/communication.png";
-import { SectionWrapper } from "../wrapper/SectionWrapper";
-import ContentsWrapper from "../wrapper/ContentsWrapper";
-import TitleWrapper from "../wrapper/TitleWrapper";
+import frontendImage from "/public/images/skills/frontend.png";
+import versionImage from "/public/images/skills/version.png";
+import backendImage from "/public/images/skills/backend.png";
+import deploymentImage from "/public/images/skills/deployment.png";
+import communicationImage from "/public/images/skills/communication.png";
+import ContentsWrapper from "../common/ContentsWrapper";
+import { SectionWrapper } from "../common/SectionWrapper";
+import SectionTitleWrapper from "../common/SectionTitleWrapper";
 
 const ContentsTitleWrapper = (title: string) => <TitleContainer>{title}</TitleContainer>;
 
@@ -15,7 +15,7 @@ const Skills = () => {
   return (
     <SkillsContainer>
       <SectionWrapper>
-        <TitleWrapper>SKILLS</TitleWrapper>
+        <SectionTitleWrapper>SKILLS</SectionTitleWrapper>
 
         <SkillsList>
           <ContentsWrapper width={318} title={ContentsTitleWrapper("Frontend")}>
