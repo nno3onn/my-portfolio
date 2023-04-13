@@ -5,6 +5,7 @@ import NaverConnect from "./education/NaverConnect";
 import KyungPook from "./education/KyungPook";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
+import Lab from "./education/Lab";
 
 const Education = () => {
   return (
@@ -16,6 +17,7 @@ const Education = () => {
           <SmileGate />
           <Sparta />
           <NaverConnect />
+          <Lab />
           <KyungPook />
         </EducationList>
       </SectionWrapper>

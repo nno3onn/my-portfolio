@@ -36,11 +36,13 @@ const EducationTemplateContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
 const InfoContainer = styled.div`
   display: flex;
+  flex: 1 4;
   flex-direction: column;
 `;
 
