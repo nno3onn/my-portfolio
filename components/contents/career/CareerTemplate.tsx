@@ -11,11 +11,10 @@ interface CareerTemplateProps {
   logoImage: StaticImageData;
   companyName: string;
   date: string;
-  description: ReactElement;
   children: ReactElement;
 }
 
-const CareerTemplate = ({ logoImage, companyName, date, description, children }: CareerTemplateProps) => {
+const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTemplateProps) => {
   return (
     <CareerTemplateContainer>
       <LogoImage logoImage={logoImage} />
@@ -25,7 +24,7 @@ const CareerTemplate = ({ logoImage, companyName, date, description, children }:
       <InfoContainer>
         <SubTitleWrapper>{companyName}</SubTitleWrapper>
         <DateWrapper>{date}</DateWrapper>
-        <DescriptionWrapper>{description}</DescriptionWrapper>
+        <DescriptionWrapper>{children}</DescriptionWrapper>
       </InfoContainer>
     </CareerTemplateContainer>
   );
@@ -43,6 +42,11 @@ const CareerTemplateContainer = styled.div`
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1 4;
+`;
+
+export const HighLightText = styled.span`
+  font-weight: bold;
 `;
 
 export default CareerTemplate;
