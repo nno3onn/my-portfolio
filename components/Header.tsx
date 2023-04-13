@@ -78,6 +78,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   transition: top 0.2s ease-in-out;
 
