@@ -5,6 +5,7 @@ import Career from "./Career";
 import Intro from "./Intro";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Education from "./Education";
 
 const Contents = () => {
   return (
@@ -14,6 +15,7 @@ const Contents = () => {
       <Skills />
       <Archiving />
       <Projects />
+      <Education />
       <Career />
     </ContentsContainer>
   );
