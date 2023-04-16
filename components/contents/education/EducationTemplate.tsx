@@ -3,6 +3,7 @@ import { DescriptionWrapper } from "@/components/common/DescriptionWrapper";
 import { Divider } from "@/components/common/Divider";
 import LogoImage from "@/components/common/LogoImage";
 import { SubTitleWrapper } from "@/components/common/SubTitleWrapper";
+import { useTheme } from "next-themes";
 import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
 import styled from "styled-components";
@@ -15,6 +16,9 @@ interface EducationTemplateProps {
 }
 
 const EducationTemplate = ({ logoImage, title, date, children }: EducationTemplateProps) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
     <EducationTemplateContainer>
       <LogoImage logoImage={logoImage} />
@@ -22,9 +26,9 @@ const EducationTemplate = ({ logoImage, title, date, children }: EducationTempla
       <Divider />
 
       <InfoContainer>
-        <SubTitleWrapper>{title}</SubTitleWrapper>
+        <SubTitleWrapper isDark={isDark}>{title}</SubTitleWrapper>
         <DateWrapper>{date}</DateWrapper>
-        <DescriptionWrapper>{children}</DescriptionWrapper>
+        <DescriptionWrapper isDark={isDark}>{children}</DescriptionWrapper>
       </InfoContainer>
     </EducationTemplateContainer>
   );
