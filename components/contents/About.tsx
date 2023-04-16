@@ -66,8 +66,8 @@ const About = ({ element }: AboutProps) => {
             />
           </svg>
           <TextWrapper>
-            <h1>연락처</h1>
-            <Link href="tel:010-6305-8727">010-6305-8727</Link>
+            <h1>연락</h1>
+            <Link href="https://open.kakao.com/o/srcWazff">카카오톡 채팅방</Link>
           </TextWrapper>
         </ItemWrapper>
 
