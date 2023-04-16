@@ -3,13 +3,18 @@ import Link from "next/link";
 import styled from "styled-components";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
+import { RefObject } from "react";
 
-const About = () => {
+interface AboutProps {
+  element: RefObject<HTMLDivElement>;
+}
+
+const About = ({ element }: AboutProps) => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <SectionWrapper>
+    <SectionWrapper ref={element}>
       <SectionTitleWrapper>ABOUT ME</SectionTitleWrapper>
 
       <InfoWrapper isDark={isDark}>

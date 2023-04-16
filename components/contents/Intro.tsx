@@ -2,8 +2,13 @@ import styled from "styled-components";
 import backgroundImage from "/public/images/skills/developer.jpg";
 import { useTheme } from "next-themes";
 import { SectionWrapper } from "../common/SectionWrapper";
+import { RefObject } from "react";
 
-const Intro = () => {
+interface IntroProps {
+  moveToScroll: () => void;
+}
+
+const Intro = ({ moveToScroll }: IntroProps) => {
   const { theme } = useTheme();
 
   return (
@@ -22,7 +27,7 @@ const Intro = () => {
             <p>코드 한 줄에도 논리적인 견해를 가지고 작성하는 개발자가 되고 싶습니다.</p>
           </Paragraph>
 
-          <MoreButton>더 알아보기 ↓</MoreButton>
+          <MoreButton onClick={moveToScroll}>더 알아보기 ↓</MoreButton>
         </SectionWrapper>
       </BackgroundBlur>
     </IntroContainer>

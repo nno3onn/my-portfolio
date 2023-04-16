@@ -4,13 +4,14 @@ import Header from "./Header";
 import TopBar from "./TopBar";
 
 interface LayoutProps {
+  moveTable: Record<string, any>;
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ moveTable, children }: LayoutProps) => {
   return (
     <>
-      <Header />
+      <Header moveTable={moveTable} />
       {children}
       <TopBar />
       <Footer />

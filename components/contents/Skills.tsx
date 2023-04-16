@@ -8,12 +8,17 @@ import communicationImage from "/public/images/skills/communication.png";
 import ContentsWrapper from "../common/ContentsWrapper";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
+import { RefObject } from "react";
 
 const ContentsTitleWrapper = (title: string) => <TitleContainer>{title}</TitleContainer>;
 
-const Skills = () => {
+interface SkillsProps {
+  element: RefObject<HTMLDivElement>;
+}
+
+const Skills = ({ element }: SkillsProps) => {
   return (
-    <SkillsContainer>
+    <SkillsContainer ref={element}>
       <SectionWrapper>
         <SectionTitleWrapper>SKILLS</SectionTitleWrapper>
 

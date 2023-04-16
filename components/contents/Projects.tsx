@@ -2,10 +2,15 @@ import styled from "styled-components";
 import ContentsWrapper from "../common/ContentsWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
 import { SectionWrapper } from "../common/SectionWrapper";
+import { RefObject } from "react";
 
-const Projects = () => {
+interface ProjectsProps {
+  element: RefObject<HTMLDivElement>;
+}
+
+const Projects = ({ element }: ProjectsProps) => {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer ref={element}>
       <SectionWrapper>
         <SectionTitleWrapper color="white">PROJECTS</SectionTitleWrapper>
 

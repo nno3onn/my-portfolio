@@ -7,7 +7,11 @@ import useScrollTop from "@/hooks/useScrollTop";
 import MenuToggleButton from "./MenuToggleButton";
 import { useState } from "react";
 
-const Header = () => {
+interface HeaderProps {
+  moveTable: Record<string, any>;
+}
+
+const Header = ({ moveTable }: HeaderProps) => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
@@ -16,6 +20,10 @@ const Header = () => {
 
   const [openMenu, setOpenMenu] = useState(false);
 
+  const scrollToMenu = (type: string) => {
+    moveTable[type].onMoveToElement();
+  };
+
   return (
     <HeaderContainer isDark={isDark} isScrollTop={isScrollTop} scrollDirection={scrollDirection}>
       <HeaderContent>
@@ -23,31 +31,35 @@ const Header = () => {
           nno3onn&#39;s Portfolio
         </Title>
         <HeaderRightContainer>
-          <LinkWrapper href="#about" isDark={isDark}>
+          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("about")}>
             About me
-          </LinkWrapper>
-          <LinkWrapper href="#skills" isDark={isDark}>
+          </MoveWrapper>
+          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("skills")}>
             Skills
-          </LinkWrapper>
-          <LinkWrapper href="#archiving" isDark={isDark}>
+          </MoveWrapper>
+          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("archiving")}>
             Archiving
-          </LinkWrapper>
-          <LinkWrapper href="#projects" isDark={isDark}>
+          </MoveWrapper>
+          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("projects")}>
             Projects
-          </LinkWrapper>
-          <LinkWrapper href="#career" isDark={isDark}>
+          </MoveWrapper>
+          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("Education")}>
+            Education
+          </MoveWrapper>
+          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("career")}>
             Career
-          </LinkWrapper>
+          </MoveWrapper>
           <DarkModeToggleButton />
           <MenuToggleButton setOpenMenu={setOpenMenu} isDark={isDark} />
         </HeaderRightContainer>
       </HeaderContent>
       <HeaderMenu openMenu={openMenu} isDark={isDark}>
-        <Link href="">About me</Link>
-        <Link href="">Skills</Link>
-        <Link href="">Archiving</Link>
-        <Link href="">Projects</Link>
-        <Link href="">Career</Link>
+        <div onClick={() => scrollToMenu("about")}>About me</div>
+        <div onClick={() => scrollToMenu("skills")}>Skills</div>
+        <div onClick={() => scrollToMenu("archiving")}>Archiving</div>
+        <div onClick={() => scrollToMenu("projects")}>Projects</div>
+        <div onClick={() => scrollToMenu("education")}>Education</div>
+        <div onClick={() => scrollToMenu("career")}>Career</div>
       </HeaderMenu>
     </HeaderContainer>
   );
@@ -100,6 +112,8 @@ const HeaderContent = styled.div`
 `;
 
 const HeaderMenu = styled.div<{ openMenu: boolean; isDark: boolean }>`
+  width: 100%;
+
   display: ${({ openMenu }) => (openMenu ? "flex" : "none")};
   flex-direction: column;
   gap: 28px;
@@ -112,6 +126,10 @@ const HeaderMenu = styled.div<{ openMenu: boolean; isDark: boolean }>`
 
   @media (min-width: 992px) {
     display: none;
+  }
+
+  div {
+    cursor: pointer;
   }
 `;
 
@@ -126,10 +144,12 @@ const HeaderRightContainer = styled.div`
   align-items: center;
 `;
 
-const LinkWrapper = styled(Link)<{ isDark: boolean }>`
+const MoveWrapper = styled.div<{ isDark: boolean }>`
   padding: 0 16px;
   color: ${({ theme, isDark }) => theme.fontColor[isDark ? "grey2" : "grey1"]};
   font-weight: bold;
+
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme, isDark }) => theme.fontColor[isDark ? "white" : "black"]};

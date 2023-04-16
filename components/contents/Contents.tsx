@@ -7,16 +7,20 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Education from "./Education";
 
-const Contents = () => {
+interface ContentsProps {
+  moveTable: Record<string, any>;
+}
+
+const Contents = ({ moveTable }: ContentsProps) => {
   return (
     <ContentsContainer>
-      <Intro />
-      <About />
-      <Skills />
-      <Archiving />
-      <Projects />
-      <Education />
-      <Career />
+      <Intro moveToScroll={moveTable["about"].onMoveToElement} />
+      <About element={moveTable["about"].element} />
+      <Skills element={moveTable["skills"].element} />
+      <Archiving element={moveTable["archiving"].element} />
+      <Projects element={moveTable["projects"].element} />
+      <Education element={moveTable["education"].element} />
+      <Career element={moveTable["career"].element} />
     </ContentsContainer>
   );
 };

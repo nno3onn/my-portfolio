@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ContentsWrapper from "../common/ContentsWrapper";
-import { ReactNode } from "react";
+import { ReactNode, RefObject } from "react";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
 
@@ -16,9 +16,13 @@ const ContentsTitleWrapper = ({ logo, title }: ContentsTitleWrapperProps) => (
   </TitleContainer>
 );
 
-const Archiving = () => {
+interface ArchivingProps {
+  element: RefObject<HTMLDivElement>;
+}
+
+const Archiving = ({ element }: ArchivingProps) => {
   return (
-    <ArchivingContainer>
+    <ArchivingContainer ref={element}>
       <SectionWrapper>
         <SectionTitleWrapper color="white">ARCHIVING</SectionTitleWrapper>
 

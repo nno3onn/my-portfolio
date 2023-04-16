@@ -3,10 +3,15 @@ import Ailtos from "./career/Ailtos";
 import Vivasecond from "./career/Vivasecond";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
+import { RefObject } from "react";
 
-const Career = () => {
+interface CareerProps {
+  element: RefObject<HTMLDivElement>;
+}
+
+const Career = ({ element }: CareerProps) => {
   return (
-    <CareerContainer>
+    <CareerContainer ref={element}>
       <SectionWrapper>
         <SectionTitleWrapper color="black">CAREER</SectionTitleWrapper>
 

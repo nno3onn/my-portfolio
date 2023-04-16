@@ -6,26 +6,27 @@ import KyungPook from "./education/KyungPook";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
 import Lab from "./education/Lab";
+import { RefObject } from "react";
 
-const Education = () => {
+interface EducationProps {
+  element: RefObject<HTMLDivElement>;
+}
+
+const Education = ({ element }: EducationProps) => {
   return (
-    <EducationContainer>
-      <SectionWrapper>
-        <SectionTitleWrapper>EDUCATION</SectionTitleWrapper>
+    <SectionWrapper ref={element}>
+      <SectionTitleWrapper>EDUCATION</SectionTitleWrapper>
 
-        <EducationList>
-          <SmileGate />
-          <Sparta />
-          <NaverConnect />
-          <Lab />
-          <KyungPook />
-        </EducationList>
-      </SectionWrapper>
-    </EducationContainer>
+      <EducationList>
+        <SmileGate />
+        <Sparta />
+        <NaverConnect />
+        <Lab />
+        <KyungPook />
+      </EducationList>
+    </SectionWrapper>
   );
 };
-
-const EducationContainer = styled.div``;
 
 const EducationList = styled.div`
   display: flex;
