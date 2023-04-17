@@ -10,19 +10,20 @@ interface IntroProps {
 
 const Intro = ({ moveToScroll }: IntroProps) => {
   const { theme } = useTheme();
+  const dark = theme === "dark";
 
   return (
     <IntroContainer style={{ backgroundImage: `url(${backgroundImage.src})` }}>
-      <BackgroundBlur isDark={theme === "dark"}>
+      <BackgroundBlur dark={dark}>
         <SectionWrapper>
-          <Title isDark={theme === "dark"}>
+          <Title dark={dark}>
             <h1>- 허다은 -</h1>
             <h1>웹 프론트엔드 개발자</h1>
           </Title>
 
           <Divider />
 
-          <Paragraph isDark={theme === "dark"}>
+          <Paragraph dark={dark}>
             <p>안녕하세요,</p>
             <p>코드 한 줄에도 논리적인 견해를 가지고 작성하는 개발자가 되고 싶습니다.</p>
           </Paragraph>
@@ -47,25 +48,25 @@ const IntroContainer = styled.div`
   background-size: cover;
 `;
 
-const BackgroundBlur = styled.div<{ isDark: boolean }>`
+const BackgroundBlur = styled.div<{ dark: boolean }>`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: ${({ isDark }) => (isDark ? "#444444b2" : "#ffffffb2")};
+  background-color: ${({ dark }) => (dark ? "#444444b2" : "#ffffffb2")};
 `;
 
-const Title = styled.div<{ isDark: boolean }>`
+const Title = styled.div<{ dark: boolean }>`
   text-align: center;
   line-height: 100px;
   font-weight: 900;
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "white" : "black"]};
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   font-size: ${({ theme }) => theme.fontSize.xxxl};
 `;
 
-const Paragraph = styled.div<{ isDark: boolean }>`
+const Paragraph = styled.div<{ dark: boolean }>`
   text-align: center;
   line-height: 1.5;
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "inactive-dark" : "inactive-light"]};
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "inactive-dark" : "inactive-light"]};
   font-size: ${({ theme }) => theme.fontSize.lg};
 
   margin-bottom: 32px;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DescriptionWrapper = styled.div<{ isDark: boolean }>`
+export const DescriptionWrapper = styled.div<{ dark: boolean }>`
   line-height: 2;
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "grey2" : "paragraph"]};
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "grey2" : "paragraph"]};
 `;

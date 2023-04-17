@@ -17,7 +17,7 @@ interface ProjectsProps {
 
 const Projects = ({ element }: ProjectsProps) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const dark = theme === "dark";
 
   return (
     <ProjectsContainer ref={element}>
@@ -25,13 +25,13 @@ const Projects = ({ element }: ProjectsProps) => {
         <SectionTitleWrapper color="white">PROJECTS</SectionTitleWrapper>
 
         <ContentsContainer>
-          <Portfolio isDark={isDark} />
-          <CodeFolio isDark={isDark} />
-          <Discord isDark={isDark} />
-          <Applog isDark={isDark} />
-          <Coorder isDark={isDark} />
-          <Icoco isDark={isDark} />
-          <MookMook isDark={isDark} />
+          <Portfolio dark={dark} />
+          <CodeFolio dark={dark} />
+          <Discord dark={dark} />
+          <Applog dark={dark} />
+          <Coorder dark={dark} />
+          <Icoco dark={dark} />
+          <MookMook dark={dark} />
         </ContentsContainer>
       </SectionWrapper>
     </ProjectsContainer>

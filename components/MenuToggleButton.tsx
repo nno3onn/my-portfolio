@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 interface MenuToggleButtonProps {
   setOpenMenu: Dispatch<SetStateAction<boolean>>;
-  isDark: boolean;
+  dark: boolean;
 }
 
-const MenuToggleButton = ({ setOpenMenu, isDark }: MenuToggleButtonProps) => {
+const MenuToggleButton = ({ setOpenMenu, dark }: MenuToggleButtonProps) => {
   return (
-    <MenuContainer isDark={isDark} onClick={() => setOpenMenu((prev) => !prev)}>
+    <MenuContainer dark={dark} onClick={() => setOpenMenu((prev) => !prev)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
@@ -25,14 +25,14 @@ const MenuToggleButton = ({ setOpenMenu, isDark }: MenuToggleButtonProps) => {
   );
 };
 
-const MenuContainer = styled.div<{ isDark: boolean }>`
+const MenuContainer = styled.div<{ dark: boolean }>`
   margin-left: 16px;
-  color: ${({ theme, isDark }) => theme.backgroundColor[isDark ? "white" : "paragraph"]};
+  color: ${({ theme, dark }) => theme.backgroundColor[dark ? "white" : "paragraph"]};
 
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme, isDark }) => theme.fontColor[`inactive-${isDark ? "dark" : "light"}`]};
+    color: ${({ theme, dark }) => theme.fontColor[`inactive-${dark ? "dark" : "light"}`]};
   }
 
   @media (min-width: 992px) {

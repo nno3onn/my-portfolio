@@ -5,12 +5,12 @@ import Table from "./Table";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
 interface MookMookProps {
-  isDark: boolean;
+  dark: boolean;
 }
 
-const MookMook = ({ isDark }: MookMookProps) => {
+const MookMook = ({ dark }: MookMookProps) => {
   return (
-    <ProjectsTemplate isDark={isDark} title="Mook-Mook" date="2022.07 - 2022.11 (3인 팀 프로젝트)">
+    <ProjectsTemplate dark={dark} title="Mook-Mook" date="2022.07 - 2022.11 (3인 팀 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>교내 프론트엔드 스터디에서 진행한 팀 프로젝트입니다. </p>

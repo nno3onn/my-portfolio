@@ -17,7 +17,7 @@ interface CareerTemplateProps {
 
 const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTemplateProps) => {
   const { theme } = useTheme();
-  const isDark = theme === "isDark";
+  const dark = theme === "dark";
 
   return (
     <CareerTemplateContainer>
@@ -26,9 +26,9 @@ const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTempla
       <Divider />
 
       <InfoContainer>
-        <SubTitleWrapper isDark={isDark}>{companyName}</SubTitleWrapper>
+        <SubTitleWrapper dark={dark}>{companyName}</SubTitleWrapper>
         <DateWrapper>{date}</DateWrapper>
-        <DescriptionWrapper isDark={isDark}>{children}</DescriptionWrapper>
+        <DescriptionWrapper dark={dark}>{children}</DescriptionWrapper>
       </InfoContainer>
     </CareerTemplateContainer>
   );

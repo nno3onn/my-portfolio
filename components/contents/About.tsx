@@ -11,13 +11,13 @@ interface AboutProps {
 
 const About = ({ element }: AboutProps) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const dark = theme === "dark";
 
   return (
     <SectionWrapper ref={element}>
       <SectionTitleWrapper>ABOUT ME</SectionTitleWrapper>
 
-      <InfoWrapper isDark={isDark}>
+      <InfoWrapper dark={dark}>
         <ItemWrapper>
           <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
             <path
@@ -96,7 +96,7 @@ const About = ({ element }: AboutProps) => {
   );
 };
 
-const InfoWrapper = styled.div<{ isDark: boolean }>`
+const InfoWrapper = styled.div<{ dark: boolean }>`
   width: 100%;
 
   display: grid;
@@ -104,9 +104,9 @@ const InfoWrapper = styled.div<{ isDark: boolean }>`
   row-gap: 24px;
   flex-flow: wrap;
 
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "inactive-dark" : "paragraph"]};
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "inactive-dark" : "paragraph"]};
   svg {
-    fill: ${({ theme, isDark }) => theme.fontColor[isDark ? "white" : "black"]};
+    fill: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   }
 
   @media (max-width: 992px) {

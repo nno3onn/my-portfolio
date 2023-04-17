@@ -5,12 +5,12 @@ import { HighLightText } from "@/components/common/HighlightText";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
 interface CodeFolioProps {
-  isDark: boolean;
+  dark: boolean;
 }
 
-const CodeFolio = ({ isDark }: CodeFolioProps) => {
+const CodeFolio = ({ dark }: CodeFolioProps) => {
   return (
-    <ProjectsTemplate isDark={isDark} title="CodeFolio" date="2023.02 - 2023.03 (5인 팀 프로젝트)">
+    <ProjectsTemplate dark={dark} title="CodeFolio" date="2023.02 - 2023.03 (5인 팀 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>

@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const Footer = () => {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const dark = theme === "dark";
 
   return (
     <FooterContainer>
       <FooterBody>
-        <IconWrapper isDark={isDark}>
+        <IconWrapper dark={dark}>
           <Link href="https://github.com/nno3onn">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
               <title>github-circle</title>
@@ -17,7 +17,7 @@ const Footer = () => {
             </svg>
           </Link>
         </IconWrapper>
-        <IconWrapper isDark={isDark}>
+        <IconWrapper dark={dark}>
           <Link href="https://nno3onn.tistory.com">
             <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 459 459">
               <path d="M229.5,0C102.75,0,0,102.75,0,229.5S102.75,459,229.5,459,459,356.25,459,229.5,356.25,0,229.5,0ZM130.21,191.45a39.57,39.57,0,1,1,39.56-39.57A39.58,39.58,0,0,1,130.21,191.45ZM229.5,390a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,390Zm0-99.29a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,290.74Zm0-99.29a39.57,39.57,0,1,1,39.56-39.57A39.57,39.57,0,0,1,229.5,191.45Zm99.29,0a39.57,39.57,0,1,1,39.57-39.57A39.57,39.57,0,0,1,328.79,191.45Z" />
@@ -25,7 +25,7 @@ const Footer = () => {
           </Link>
         </IconWrapper>
       </FooterBody>
-      <FooterTail isDark={isDark}>© 2023. Heo Da Eun. All rights reserved.</FooterTail>
+      <FooterTail dark={dark}>© 2023. Heo Da Eun. All rights reserved.</FooterTail>
     </FooterContainer>
   );
 };
@@ -46,22 +46,22 @@ const FooterBody = styled.div`
   margin-bottom: 16px;
 `;
 
-const IconWrapper = styled.div<{ isDark: boolean }>`
+const IconWrapper = styled.div<{ dark: boolean }>`
   cursor: pointer;
 
   path {
-    fill: ${({ theme, isDark }) => theme.backgroundColor[isDark ? "white" : "black"]};
+    fill: ${({ theme, dark }) => theme.backgroundColor[dark ? "white" : "black"]};
   }
 
   &:hover {
     path {
-      fill: ${({ theme, isDark }) => theme.fontColor[`inactive-${isDark ? "dark" : "light"}`]};
+      fill: ${({ theme, dark }) => theme.fontColor[`inactive-${dark ? "dark" : "light"}`]};
     }
   }
 `;
 
-const FooterTail = styled.p<{ isDark: boolean }>`
-  color: ${({ theme, isDark }) => theme.fontColor[`inactive-${isDark ? "dark" : "light"}`]};
+const FooterTail = styled.p<{ dark: boolean }>`
+  color: ${({ theme, dark }) => theme.fontColor[`inactive-${dark ? "dark" : "light"}`]};
 `;
 
 export default Footer;

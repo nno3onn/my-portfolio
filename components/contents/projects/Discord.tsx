@@ -5,13 +5,13 @@ import Table from "./Table";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
 interface DiscordProps {
-  isDark: boolean;
+  dark: boolean;
 }
 
-const Discord = ({ isDark }: DiscordProps) => {
+const Discord = ({ dark }: DiscordProps) => {
   return (
     <ProjectsTemplate
-      isDark={isDark}
+      dark={dark}
       title="디스코드 클론코딩"
       date="[캠프 기간] 2023.01 - 2023.02 (5인 프로젝트) | [추가 개발] 2023.03 - 진행 중 (3인 프로젝트)"
     >

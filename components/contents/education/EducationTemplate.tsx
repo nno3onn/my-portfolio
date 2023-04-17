@@ -17,7 +17,7 @@ interface EducationTemplateProps {
 
 const EducationTemplate = ({ logoImage, title, date, children }: EducationTemplateProps) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const dark = theme === "dark";
 
   return (
     <EducationTemplateContainer>
@@ -26,9 +26,9 @@ const EducationTemplate = ({ logoImage, title, date, children }: EducationTempla
       <Divider />
 
       <InfoContainer>
-        <SubTitleWrapper isDark={isDark}>{title}</SubTitleWrapper>
+        <SubTitleWrapper dark={dark}>{title}</SubTitleWrapper>
         <DateWrapper>{date}</DateWrapper>
-        <DescriptionWrapper isDark={isDark}>{children}</DescriptionWrapper>
+        <DescriptionWrapper dark={dark}>{children}</DescriptionWrapper>
       </InfoContainer>
     </EducationTemplateContainer>
   );

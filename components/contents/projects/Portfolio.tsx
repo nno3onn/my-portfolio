@@ -5,12 +5,12 @@ import { HighLightText } from "@/components/common/HighlightText";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
 interface PortfolioProps {
-  isDark: boolean;
+  dark: boolean;
 }
 
-const Portfolio = ({ isDark }: PortfolioProps) => {
+const Portfolio = ({ dark }: PortfolioProps) => {
   return (
-    <ProjectsTemplate isDark={isDark} title="개인 포트폴리오 사이트" date="2023.04 (1인 개인 프로젝트)">
+    <ProjectsTemplate dark={dark} title="개인 포트폴리오 사이트" date="2023.04 (1인 개인 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>개인 포트폴리오로 개발한 웹입니다.</p>

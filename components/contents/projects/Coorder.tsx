@@ -5,12 +5,12 @@ import { LinkWrapper } from "@/components/common/LinkWrapper";
 import Table from "./Table";
 
 interface CoorderProps {
-  isDark: boolean;
+  dark: boolean;
 }
 
-const Coorder = ({ isDark }: CoorderProps) => {
+const Coorder = ({ dark }: CoorderProps) => {
   return (
-    <ProjectsTemplate isDark={isDark} title="CO:ORDER (코오더)" date="2022.06 - 2022.09 (5인 프로젝트)">
+    <ProjectsTemplate dark={dark} title="CO:ORDER (코오더)" date="2022.06 - 2022.09 (5인 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>

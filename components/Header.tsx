@@ -13,7 +13,7 @@ interface HeaderProps {
 
 const Header = ({ moveTable }: HeaderProps) => {
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const dark = theme === "dark";
 
   const scrollDirection = useScrollDirection();
   const isScrollTop = useScrollTop();
@@ -25,35 +25,35 @@ const Header = ({ moveTable }: HeaderProps) => {
   };
 
   return (
-    <HeaderContainer isDark={isDark} isScrollTop={isScrollTop} scrollDirection={scrollDirection}>
+    <HeaderContainer dark={dark} isScrollTop={isScrollTop} scrollDirection={scrollDirection}>
       <HeaderContent>
-        <Title href="/" isDark={isDark}>
+        <Title href="/" dark={dark}>
           nno3onn&#39;s Portfolio
         </Title>
         <HeaderRightContainer>
-          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("about")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("about")}>
             About me
           </MoveWrapper>
-          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("skills")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("skills")}>
             Skills
           </MoveWrapper>
-          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("archiving")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("archiving")}>
             Archiving
           </MoveWrapper>
-          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("projects")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("projects")}>
             Projects
           </MoveWrapper>
-          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("Education")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("Education")}>
             Education
           </MoveWrapper>
-          <MoveWrapper isDark={isDark} onClick={() => scrollToMenu("career")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("career")}>
             Career
           </MoveWrapper>
           <DarkModeToggleButton />
-          <MenuToggleButton setOpenMenu={setOpenMenu} isDark={isDark} />
+          <MenuToggleButton setOpenMenu={setOpenMenu} dark={dark} />
         </HeaderRightContainer>
       </HeaderContent>
-      <HeaderMenu openMenu={openMenu} isDark={isDark}>
+      <HeaderMenu openMenu={openMenu} dark={dark}>
         <div onClick={() => scrollToMenu("about")}>About me</div>
         <div onClick={() => scrollToMenu("skills")}>Skills</div>
         <div onClick={() => scrollToMenu("archiving")}>Archiving</div>
@@ -66,21 +66,21 @@ const Header = ({ moveTable }: HeaderProps) => {
 };
 
 interface HeaderContainerProps {
-  isDark: boolean;
+  dark: boolean;
   isScrollTop: boolean;
   scrollDirection: DirectionType;
 }
 
-const setBackgroundColor = (theme: any, isScrollTop: boolean, isDark: boolean) => {
+const setBackgroundColor = (theme: any, isScrollTop: boolean, dark: boolean) => {
   if (isScrollTop) {
     return "transparent";
   }
-  return theme.backgroundColor[isDark ? "black" : "white"];
+  return theme.backgroundColor[dark ? "black" : "white"];
 };
 
 const HeaderContainer = styled.div<HeaderContainerProps>`
   width: 100vw;
-  background-color: ${({ theme, isScrollTop, isDark }) => setBackgroundColor(theme, isScrollTop, isDark)};
+  background-color: ${({ theme, isScrollTop, dark }) => setBackgroundColor(theme, isScrollTop, dark)};
   box-shadow: ${({ theme, isScrollTop }) => (isScrollTop ? "none" : theme.backgroundColor["header-box-shadow"])};
 
   position: fixed;
@@ -96,7 +96,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
 
   @media (max-width: 992px) {
     top: 0;
-    background-color: ${({ theme, isDark }) => theme.backgroundColor[isDark ? "black" : "white"]};
+    background-color: ${({ theme, dark }) => theme.backgroundColor[dark ? "black" : "white"]};
     box-shadow: ${({ theme }) => theme.backgroundColor["header-box-shadow"]};
   }
 `;
@@ -111,7 +111,7 @@ const HeaderContent = styled.div`
   max-width: 1158px;
 `;
 
-const HeaderMenu = styled.div<{ openMenu: boolean; isDark: boolean }>`
+const HeaderMenu = styled.div<{ openMenu: boolean; dark: boolean }>`
   width: 100%;
 
   display: ${({ openMenu }) => (openMenu ? "flex" : "none")};
@@ -119,7 +119,7 @@ const HeaderMenu = styled.div<{ openMenu: boolean; isDark: boolean }>`
   gap: 28px;
 
   padding: 16px 0 32px 32px;
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "grey2" : "grey1"]};
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "grey2" : "grey1"]};
   font-weight: bold;
 
   transition: all 0.2 ease-in-out;
@@ -133,8 +133,8 @@ const HeaderMenu = styled.div<{ openMenu: boolean; isDark: boolean }>`
   }
 `;
 
-const Title = styled(Link)<{ isDark: boolean }>`
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "white" : "black"]};
+const Title = styled(Link)<{ dark: boolean }>`
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: bold;
 `;
@@ -144,15 +144,15 @@ const HeaderRightContainer = styled.div`
   align-items: center;
 `;
 
-const MoveWrapper = styled.div<{ isDark: boolean }>`
+const MoveWrapper = styled.div<{ dark: boolean }>`
   padding: 0 16px;
-  color: ${({ theme, isDark }) => theme.fontColor[isDark ? "grey2" : "grey1"]};
+  color: ${({ theme, dark }) => theme.fontColor[dark ? "grey2" : "grey1"]};
   font-weight: bold;
 
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme, isDark }) => theme.fontColor[isDark ? "white" : "black"]};
+    color: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   }
 
   @media (max-width: 992px) {
