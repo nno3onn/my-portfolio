@@ -8,7 +8,6 @@ import Applog from "./projects/Applog";
 import Discord from "./projects/Discord";
 import Coorder from "./projects/Coorder";
 import MookMook from "./projects/MookMook";
-import { useTheme } from "next-themes";
 import Icoco from "./projects/Icoco";
 import useDark from "@/hooks/useDark";
 

@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import styled from "styled-components";
 import { SectionWrapper } from "../common/SectionWrapper";

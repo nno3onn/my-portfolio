@@ -1,12 +1,11 @@
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import styled from "styled-components";
-import DarkModeToggleButton from "./DarkModeToggleButton";
 import useScrollDirection, { DirectionType } from "@/hooks/useScrollDirection";
 import useScrollTop from "@/hooks/useScrollTop";
-import MenuToggleButton from "./MenuToggleButton";
+import MenuToggleButton from "./Header/MenuToggleButton";
 import { useState } from "react";
 import useDark from "@/hooks/useDark";
+import DarkModeToggleButton from "./Header/DarkModeToggleButton";
 
 interface HeaderProps {
   moveTable: Record<string, any>;

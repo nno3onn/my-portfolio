@@ -1,5 +1,4 @@
 import useDark from "@/hooks/useDark";
-import { useTheme } from "next-themes";
 import { ReactNode } from "react";
 import styled from "styled-components";
 

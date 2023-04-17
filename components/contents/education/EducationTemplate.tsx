@@ -4,7 +4,6 @@ import { Divider } from "@/components/common/Divider";
 import LogoImage from "@/components/common/LogoImage";
 import { SubTitleWrapper } from "@/components/common/SubTitleWrapper";
 import useDark from "@/hooks/useDark";
-import { useTheme } from "next-themes";
 import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
 import styled from "styled-components";
