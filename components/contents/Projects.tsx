@@ -10,14 +10,14 @@ import Coorder from "./projects/Coorder";
 import MookMook from "./projects/MookMook";
 import { useTheme } from "next-themes";
 import Icoco from "./projects/Icoco";
+import useDark from "@/hooks/useDark";
 
 interface ProjectsProps {
   element: RefObject<HTMLDivElement>;
 }
 
 const Projects = ({ element }: ProjectsProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <ProjectsContainer ref={element}>

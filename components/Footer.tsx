@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import useDark from "@/hooks/useDark";
 
 const Footer = () => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <FooterContainer>

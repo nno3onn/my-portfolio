@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
 import { RefObject } from "react";
+import useDark from "@/hooks/useDark";
 
 interface AboutProps {
   element: RefObject<HTMLDivElement>;
 }
 
 const About = ({ element }: AboutProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <SectionWrapper ref={element}>

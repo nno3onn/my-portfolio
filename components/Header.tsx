@@ -6,14 +6,14 @@ import useScrollDirection, { DirectionType } from "@/hooks/useScrollDirection";
 import useScrollTop from "@/hooks/useScrollTop";
 import MenuToggleButton from "./MenuToggleButton";
 import { useState } from "react";
+import useDark from "@/hooks/useDark";
 
 interface HeaderProps {
   moveTable: Record<string, any>;
 }
 
 const Header = ({ moveTable }: HeaderProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   const scrollDirection = useScrollDirection();
   const isScrollTop = useScrollTop();

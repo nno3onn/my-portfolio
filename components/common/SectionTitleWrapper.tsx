@@ -1,3 +1,4 @@
+import useDark from "@/hooks/useDark";
 import { useTheme } from "next-themes";
 import { ReactNode } from "react";
 import styled from "styled-components";
@@ -8,8 +9,7 @@ interface TitleProps {
 }
 
 const SectionTitleWrapper = ({ children, color = "" }: TitleProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <TitleContainer dark={dark} color={color}>

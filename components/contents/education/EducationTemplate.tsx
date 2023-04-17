@@ -3,6 +3,7 @@ import { DescriptionWrapper } from "@/components/common/DescriptionWrapper";
 import { Divider } from "@/components/common/Divider";
 import LogoImage from "@/components/common/LogoImage";
 import { SubTitleWrapper } from "@/components/common/SubTitleWrapper";
+import useDark from "@/hooks/useDark";
 import { useTheme } from "next-themes";
 import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
@@ -16,8 +17,7 @@ interface EducationTemplateProps {
 }
 
 const EducationTemplate = ({ logoImage, title, date, children }: EducationTemplateProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <EducationTemplateContainer>

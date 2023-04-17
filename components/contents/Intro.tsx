@@ -3,14 +3,14 @@ import backgroundImage from "/public/images/skills/developer.jpg";
 import { useTheme } from "next-themes";
 import { SectionWrapper } from "../common/SectionWrapper";
 import { RefObject } from "react";
+import useDark from "@/hooks/useDark";
 
 interface IntroProps {
   moveToScroll: () => void;
 }
 
 const Intro = ({ moveToScroll }: IntroProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <IntroContainer style={{ backgroundImage: `url(${backgroundImage.src})` }}>

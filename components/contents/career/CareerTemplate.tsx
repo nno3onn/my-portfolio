@@ -7,6 +7,7 @@ import { DateWrapper } from "@/components/common/DateWrapper";
 import { SubTitleWrapper } from "@/components/common/SubTitleWrapper";
 import { DescriptionWrapper } from "@/components/common/DescriptionWrapper";
 import { useTheme } from "next-themes";
+import useDark from "@/hooks/useDark";
 
 interface CareerTemplateProps {
   logoImage: StaticImageData;
@@ -16,8 +17,7 @@ interface CareerTemplateProps {
 }
 
 const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTemplateProps) => {
-  const { theme } = useTheme();
-  const dark = theme === "dark";
+  const dark = useDark();
 
   return (
     <CareerTemplateContainer>
