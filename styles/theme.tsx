@@ -17,6 +17,7 @@ const fontColor = {
   grey1: "#6C757D",
   grey2: "#ccc",
   blue: "#258dbb",
+  pink: "#ED3770",
 
   "inactive-light": "#000000B2",
   "inactive-dark": "#FFFFFFB2",

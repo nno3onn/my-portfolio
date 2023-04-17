@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import CareerTemplate, { HighLightText } from "./CareerTemplate";
+import CareerTemplate from "./CareerTemplate";
 import logoImage from "/public/images/career/viva-logo.png";
 import { Divider } from "@/components/common/Divider";
 import { DateWrapper } from "@/components/common/DateWrapper";
+import { BoldText } from "@/components/common/BoldText";
 
 const Vivasecond = () => {
   return (
@@ -11,15 +11,14 @@ const Vivasecond = () => {
         <p>반려 동물들의 사진 및 동영상을 공유하는 소셜 미디어 플랫폼 자체 개발 및 외부 서비스 개발하는 IT 업체</p>
         <br />
         <p>
-          기본적으로 <HighLightText>JavaScript 기반의 웹 프론트엔드 개발</HighLightText>을 담당하였으며, 필요에 따라 풀스택 개발 업무를
-          담당하였습니다.
+          기본적으로 <BoldText>JavaScript 기반의 웹 프론트엔드 개발</BoldText>을 담당하였으며, 필요에 따라 풀스택 개발 업무를 담당하였습니다.
         </p>
 
         <br />
         <Divider />
         <br />
 
-        <HighLightText> ▎아이코코 서비스 웹 개발</HighLightText>
+        <BoldText> ▎아이코코 서비스 웹 개발</BoldText>
         <DateWrapper>2021.10 - 2022.04</DateWrapper>
         <p>산모들이 원하는 산후도우미를 쉽고 빠르게 찾고 예약할 수 있는 서비스</p>
         <ul>
@@ -33,7 +32,7 @@ const Vivasecond = () => {
         </ul>
 
         <br />
-        <HighLightText> ▎북구 교복나눔 서비스 수정 및 기능 추가</HighLightText>
+        <BoldText> ▎북구 교복나눔 서비스 수정 및 기능 추가</BoldText>
         <DateWrapper>2021.09</DateWrapper>
         <p>교복 외 참고서와 다양한 물품을 자유롭게 기부하고 나눌 수 있는 모바일 기부 서비스</p>
         <ul>
@@ -43,7 +42,7 @@ const Vivasecond = () => {
         </ul>
 
         <br />
-        <HighLightText> ▎자체 서비스 withpaw의 동영상 압축 업무 담당</HighLightText>
+        <BoldText> ▎자체 서비스 withpaw의 동영상 압축 업무 담당</BoldText>
         <DateWrapper>2021.09</DateWrapper>
         <ul>
           <li>반려 동물들의 사진과 동영상을 서버에 저용량으로 올리기 위해 압축 라이브러리를 활용하여 파일 사이즈 압축</li>

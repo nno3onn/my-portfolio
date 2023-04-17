@@ -23,7 +23,7 @@ const Intro = ({ moveToScroll }: IntroProps) => {
           <Divider />
 
           <Paragraph isDark={theme === "dark"}>
-            <p>안녕하세요.</p>
+            <p>안녕하세요,</p>
             <p>코드 한 줄에도 논리적인 견해를 가지고 작성하는 개발자가 되고 싶습니다.</p>
           </Paragraph>
 

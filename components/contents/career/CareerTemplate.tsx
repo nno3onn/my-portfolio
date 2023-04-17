@@ -6,6 +6,7 @@ import { Divider } from "@/components/common/Divider";
 import { DateWrapper } from "@/components/common/DateWrapper";
 import { SubTitleWrapper } from "@/components/common/SubTitleWrapper";
 import { DescriptionWrapper } from "@/components/common/DescriptionWrapper";
+import { useTheme } from "next-themes";
 
 interface CareerTemplateProps {
   logoImage: StaticImageData;
@@ -15,6 +16,9 @@ interface CareerTemplateProps {
 }
 
 const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTemplateProps) => {
+  const { theme } = useTheme();
+  const isDark = theme === "isDark";
+
   return (
     <CareerTemplateContainer>
       <LogoImage logoImage={logoImage} />
@@ -22,9 +26,9 @@ const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTempla
       <Divider />
 
       <InfoContainer>
-        <SubTitleWrapper>{companyName}</SubTitleWrapper>
+        <SubTitleWrapper isDark={isDark}>{companyName}</SubTitleWrapper>
         <DateWrapper>{date}</DateWrapper>
-        <DescriptionWrapper>{children}</DescriptionWrapper>
+        <DescriptionWrapper isDark={isDark}>{children}</DescriptionWrapper>
       </InfoContainer>
     </CareerTemplateContainer>
   );
@@ -43,10 +47,6 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 4;
-`;
-
-export const HighLightText = styled.span`
-  font-weight: bold;
 `;
 
 export default CareerTemplate;

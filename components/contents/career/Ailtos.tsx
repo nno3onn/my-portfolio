@@ -1,6 +1,7 @@
 import { Divider } from "@/components/common/Divider";
-import CareerTemplate, { HighLightText } from "./CareerTemplate";
+import CareerTemplate from "./CareerTemplate";
 import logoImage from "/public/images/career/ailtos-logo.png";
+import { BoldText } from "@/components/common/BoldText";
 
 const Ailtos = () => {
   return (
@@ -18,7 +19,7 @@ const Ailtos = () => {
         <Divider />
         <br />
 
-        <HighLightText>▎pixcolo 서비스 앱 개발</HighLightText>
+        <BoldText>▎pixcolo 서비스 앱 개발</BoldText>
         <p>정육면체 종이 자석블럭을 앱에서 도면으로 제작하여 사용자들과 공유하는 앱 서비스</p>
         <ul>
           <li>Skills: Dart, Flutter, GraphQL</li>
