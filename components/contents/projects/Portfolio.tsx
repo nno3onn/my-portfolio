@@ -4,13 +4,9 @@ import Table from "./Table";
 import { HighLightText } from "@/components/common/HighlightText";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
-interface PortfolioProps {
-  dark: boolean;
-}
-
-const Portfolio = ({ dark }: PortfolioProps) => {
+const Portfolio = () => {
   return (
-    <ProjectsTemplate dark={dark} title="개인 포트폴리오 사이트" date="2023.04 (1인 개인 프로젝트)">
+    <ProjectsTemplate title="개인 포트폴리오 사이트" date="2023.04 (1인 개인 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>개인 포트폴리오로 개발한 웹입니다.</p>

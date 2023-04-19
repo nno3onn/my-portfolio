@@ -16,8 +16,6 @@ interface CareerTemplateProps {
 }
 
 const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTemplateProps) => {
-  const dark = useDark();
-
   return (
     <CareerTemplateContainer>
       <LogoImage logoImage={logoImage} />
@@ -25,9 +23,9 @@ const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTempla
       <Divider />
 
       <InfoContainer>
-        <SubTitleWrapper dark={dark}>{companyName}</SubTitleWrapper>
+        <SubTitleWrapper dark={false}>{companyName}</SubTitleWrapper>
         <DateWrapper>{date}</DateWrapper>
-        <DescriptionWrapper dark={dark}>{children}</DescriptionWrapper>
+        <DescriptionWrapper dark={false}>{children}</DescriptionWrapper>
       </InfoContainer>
     </CareerTemplateContainer>
   );
@@ -36,6 +34,8 @@ const CareerTemplate = ({ logoImage, companyName, date, children }: CareerTempla
 const CareerTemplateContainer = styled.div`
   display: flex;
   gap: 40px;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
     flex-direction: column;

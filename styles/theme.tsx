@@ -24,6 +24,7 @@ const fontColor = {
 };
 
 const backgroundColor = {
+  transparent: "transparent",
   white: "#fff",
   black: "#222",
   grey: "#f5f5f5",

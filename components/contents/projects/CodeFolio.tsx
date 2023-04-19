@@ -4,13 +4,9 @@ import Table from "./Table";
 import { HighLightText } from "@/components/common/HighlightText";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
-interface CodeFolioProps {
-  dark: boolean;
-}
-
-const CodeFolio = ({ dark }: CodeFolioProps) => {
+const CodeFolio = () => {
   return (
-    <ProjectsTemplate dark={dark} title="CodeFolio" date="2023.02 - 2023.03 (5인 팀 프로젝트)">
+    <ProjectsTemplate title="CodeFolio" date="2023.02 - 2023.03 (5인 팀 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>

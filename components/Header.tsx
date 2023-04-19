@@ -42,7 +42,7 @@ const Header = ({ moveTable }: HeaderProps) => {
           <MoveWrapper dark={dark} onClick={() => scrollToMenu("projects")}>
             Projects
           </MoveWrapper>
-          <MoveWrapper dark={dark} onClick={() => scrollToMenu("Education")}>
+          <MoveWrapper dark={dark} onClick={() => scrollToMenu("education")}>
             Education
           </MoveWrapper>
           <MoveWrapper dark={dark} onClick={() => scrollToMenu("career")}>
@@ -65,13 +65,13 @@ const Header = ({ moveTable }: HeaderProps) => {
 };
 
 interface HeaderContainerProps {
-  dark: boolean;
+  dark: DarkType;
   isScrollTop: boolean;
   scrollDirection: DirectionType;
 }
 
-const setBackgroundColor = (theme: any, isScrollTop: boolean, dark: boolean) => {
-  if (isScrollTop) {
+const setBackgroundColor = (theme: any, isScrollTop: boolean, dark: DarkType | null) => {
+  if (isScrollTop || dark === null) {
     return "transparent";
   }
   return theme.backgroundColor[dark ? "black" : "white"];
@@ -95,7 +95,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
 
   @media (max-width: 992px) {
     top: 0;
-    background-color: ${({ theme, dark }) => theme.backgroundColor[dark ? "black" : "white"]};
+    background-color: ${({ theme, dark }) => theme.backgroundColor[dark === null ? "transparent" : dark ? "black" : "white"]};
     box-shadow: ${({ theme }) => theme.backgroundColor["header-box-shadow"]};
   }
 `;
@@ -110,7 +110,7 @@ const HeaderContent = styled.div`
   max-width: 1158px;
 `;
 
-const HeaderMenu = styled.div<{ openMenu: boolean; dark: boolean }>`
+const HeaderMenu = styled.div<{ openMenu: boolean; dark: DarkType }>`
   width: 100%;
 
   display: ${({ openMenu }) => (openMenu ? "flex" : "none")};
@@ -132,7 +132,7 @@ const HeaderMenu = styled.div<{ openMenu: boolean; dark: boolean }>`
   }
 `;
 
-const Title = styled(Link)<{ dark: boolean }>`
+const Title = styled(Link)<{ dark: DarkType }>`
   color: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: bold;
@@ -143,7 +143,7 @@ const HeaderRightContainer = styled.div`
   align-items: center;
 `;
 
-const MoveWrapper = styled.div<{ dark: boolean }>`
+const MoveWrapper = styled.div<{ dark: DarkType }>`
   padding: 0 16px;
   color: ${({ theme, dark }) => theme.fontColor[dark ? "grey2" : "grey1"]};
   font-weight: bold;

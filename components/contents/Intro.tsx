@@ -35,7 +35,6 @@ const Intro = ({ moveToScroll }: IntroProps) => {
 
 const IntroContainer = styled.div`
   position: relative;
-  z-index: 1;
   width: 100%;
   height: 600px;
 
@@ -46,35 +45,47 @@ const IntroContainer = styled.div`
   background-size: cover;
 `;
 
-const BackgroundBlur = styled.div<{ dark: boolean }>`
+const BackgroundBlur = styled.div<{ dark: DarkType }>`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: ${({ dark }) => (dark ? "#444444b2" : "#ffffffb2")};
+  padding-top: 68px;
+  background-color: ${({ dark }) => (dark === null ? "transparent" : dark ? "#444444b2" : "#ffffffb2")};
+
+  word-break: keep-all;
 `;
 
-const Title = styled.div<{ dark: boolean }>`
+const Title = styled.div<{ dark: DarkType }>`
   text-align: center;
   line-height: 100px;
   font-weight: 900;
   color: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   font-size: ${({ theme }) => theme.fontSize.xxxl};
+
+  @media (max-width: 768px) {
+    line-height: 80px;
+    font-size: ${({ theme }) => theme.fontSize.xxl};
+  }
+`;
+const Divider = styled.div`
+  width: 52px;
+  height: 3px;
+  margin: 24px auto;
+  background-color: ${({ theme }) => theme.backgroundColor.orange};
 `;
 
-const Paragraph = styled.div<{ dark: boolean }>`
+const Paragraph = styled.div<{ dark: DarkType }>`
   text-align: center;
   line-height: 1.5;
   color: ${({ theme, dark }) => theme.fontColor[dark ? "inactive-dark" : "inactive-light"]};
   font-size: ${({ theme }) => theme.fontSize.lg};
 
   margin-bottom: 32px;
-`;
 
-const Divider = styled.div`
-  height: 3px;
-  width: 52px;
-  margin: 24px auto;
-  background-color: ${({ theme }) => theme.backgroundColor.orange};
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+    font-size: ${({ theme }) => theme.fontSize.base};
+  }
 `;
 
 const MoreButton = styled.div`

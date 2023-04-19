@@ -5,13 +5,9 @@ import Table from "./Table";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 import { BoldText } from "@/components/common/BoldText";
 
-interface IcocoProps {
-  dark: boolean;
-}
-
-const Icoco = ({ dark }: IcocoProps) => {
+const Icoco = () => {
   return (
-    <ProjectsTemplate dark={dark} title="icoco (아이코코)" date="2022.10 - 2023.04">
+    <ProjectsTemplate title="icoco (아이코코)" date="2022.10 - 2023.04">
       <ProjectsContainer>
         <p>
           비바세컨드에 근무할 당시 외주로 진행했던 프로젝트로, 산모들이 원하는 산후도우미를 찾아 매칭시켜주는 서비스입니다. 저는 웹 풀스택 개발자로서

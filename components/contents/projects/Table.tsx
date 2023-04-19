@@ -26,6 +26,7 @@ const TableContainer = styled.div`
 
 const TableKey = styled.div`
   flex: 2;
+  min-width: 140px;
   font-weight: bold;
 
   display: flex;

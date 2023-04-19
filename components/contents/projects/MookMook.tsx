@@ -4,13 +4,9 @@ import { Divider } from "@/components/common/Divider";
 import Table from "./Table";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
-interface MookMookProps {
-  dark: boolean;
-}
-
-const MookMook = ({ dark }: MookMookProps) => {
+const MookMook = () => {
   return (
-    <ProjectsTemplate dark={dark} title="Mook-Mook" date="2022.07 - 2022.11 (3인 팀 프로젝트)">
+    <ProjectsTemplate title="Mook-Mook" date="2022.07 - 2022.11 (3인 팀 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>교내 프론트엔드 스터디에서 진행한 팀 프로젝트입니다. </p>

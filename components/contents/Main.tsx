@@ -11,9 +11,9 @@ interface ContentsProps {
   moveTable: Record<string, any>;
 }
 
-const Contents = ({ moveTable }: ContentsProps) => {
+const Main = ({ moveTable }: ContentsProps) => {
   return (
-    <ContentsContainer>
+    <MainContainer>
       <Intro moveToScroll={moveTable["about"].onMoveToElement} />
       <About element={moveTable["about"].element} />
       <Skills element={moveTable["skills"].element} />
@@ -21,13 +21,14 @@ const Contents = ({ moveTable }: ContentsProps) => {
       <Projects element={moveTable["projects"].element} />
       <Education element={moveTable["education"].element} />
       <Career element={moveTable["career"].element} />
-    </ContentsContainer>
+    </MainContainer>
   );
 };
 
-const ContentsContainer = styled.div`
+const MainContainer = styled.div`
+  width: 100vw;
   display: flex;
   flex-direction: column;
 `;
 
-export default Contents;
+export default Main;

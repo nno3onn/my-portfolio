@@ -6,18 +6,17 @@ import { ReactElement } from "react";
 import styled from "styled-components";
 
 interface ProjectsTemplateProps {
-  dark: boolean;
   title: string;
   date: string;
   children: ReactElement;
 }
 
-const ProjectsTemplate = ({ dark, title, date, children }: ProjectsTemplateProps) => {
+const ProjectsTemplate = ({ title, date, children }: ProjectsTemplateProps) => {
   return (
     <ContentsWrapper padding={48} isTransform={false}>
-      <SubTitleWrapper dark={dark}>{title}</SubTitleWrapper>
+      <SubTitleWrapper dark={false}>{title}</SubTitleWrapper>
       <DateWrapper>{date}</DateWrapper>
-      <DescriptionWrapper dark={dark}>{children}</DescriptionWrapper>
+      <DescriptionWrapper dark={false}>{children}</DescriptionWrapper>
     </ContentsWrapper>
   );
 };

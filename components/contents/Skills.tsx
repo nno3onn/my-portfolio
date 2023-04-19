@@ -57,6 +57,9 @@ const SkillsList = styled.div`
   column-gap: 40px;
 
   @media (max-width: 1024px) {
+    column-count: 2;
+  }
+  @media (max-width: 768px) {
     column-count: 1;
   }
 `;

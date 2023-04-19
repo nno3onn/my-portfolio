@@ -4,13 +4,9 @@ import { Divider } from "@/components/common/Divider";
 import Table from "./Table";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 
-interface ApplogProps {
-  dark: boolean;
-}
-
-const Applog = ({ dark }: ApplogProps) => {
+const Applog = () => {
   return (
-    <ProjectsTemplate dark={dark} title="Applog (블로그)" date="2022.12 (1인 개인 프로젝트)">
+    <ProjectsTemplate title="Applog (블로그)" date="2022.12 (1인 개인 프로젝트)">
       <ProjectsContainer>
         <p>
           <HighLightText>스마일게이트 윈터데브캠프 2기</HighLightText>에 참가하여 개발한 1인 개인 프로젝트 블로그입니다.

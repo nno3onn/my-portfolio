@@ -9,28 +9,25 @@ import Discord from "./projects/Discord";
 import Coorder from "./projects/Coorder";
 import MookMook from "./projects/MookMook";
 import Icoco from "./projects/Icoco";
-import useDark from "@/hooks/useDark";
 
 interface ProjectsProps {
   element: RefObject<HTMLDivElement>;
 }
 
 const Projects = ({ element }: ProjectsProps) => {
-  const dark = useDark();
-
   return (
     <ProjectsContainer ref={element}>
       <SectionWrapper>
         <SectionTitleWrapper color="white">PROJECTS</SectionTitleWrapper>
 
         <ContentsContainer>
-          <Portfolio dark={dark} />
-          <CodeFolio dark={dark} />
-          <Discord dark={dark} />
-          <Applog dark={dark} />
-          <Coorder dark={dark} />
-          <Icoco dark={dark} />
-          <MookMook dark={dark} />
+          <Portfolio />
+          <CodeFolio />
+          <Discord />
+          <Applog />
+          <Coorder />
+          <Icoco />
+          <MookMook />
         </ContentsContainer>
       </SectionWrapper>
     </ProjectsContainer>

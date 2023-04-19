@@ -4,13 +4,9 @@ import { HighLightText } from "@/components/common/HighlightText";
 import { LinkWrapper } from "@/components/common/LinkWrapper";
 import Table from "./Table";
 
-interface CoorderProps {
-  dark: boolean;
-}
-
-const Coorder = ({ dark }: CoorderProps) => {
+const Coorder = () => {
   return (
-    <ProjectsTemplate dark={dark} title="CO:ORDER (코오더)" date="2022.06 - 2022.09 (5인 프로젝트)">
+    <ProjectsTemplate title="CO:ORDER (코오더)" date="2022.06 - 2022.09 (5인 프로젝트)">
       <ProjectsContainer>
         <div>
           <p>
