@@ -1,0 +1,1 @@
+type DarkType = boolean | null;

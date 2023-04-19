@@ -45,7 +45,7 @@ const FooterBody = styled.div`
   margin-bottom: 16px;
 `;
 
-const IconWrapper = styled.div<{ dark: boolean }>`
+const IconWrapper = styled.div<{ dark: DarkType }>`
   cursor: pointer;
 
   path {
@@ -59,7 +59,7 @@ const IconWrapper = styled.div<{ dark: boolean }>`
   }
 `;
 
-const FooterTail = styled.p<{ dark: boolean }>`
+const FooterTail = styled.p<{ dark: DarkType }>`
   color: ${({ theme, dark }) => theme.fontColor[`inactive-${dark ? "dark" : "light"}`]};
 `;
 

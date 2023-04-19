@@ -17,7 +17,7 @@ const SectionTitleWrapper = ({ children, color = "" }: TitleProps) => {
   );
 };
 
-export const TitleContainer = styled.div<{ dark: boolean; color: string }>`
+export const TitleContainer = styled.div<{ dark: DarkType; color: string }>`
   width: fit-content;
   margin-bottom: 52px;
 

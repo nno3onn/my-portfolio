@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface MenuToggleButtonProps {
   setOpenMenu: Dispatch<SetStateAction<boolean>>;
-  dark: boolean;
+  dark: DarkType;
 }
 
 const MenuToggleButton = ({ setOpenMenu, dark }: MenuToggleButtonProps) => {
@@ -25,7 +25,7 @@ const MenuToggleButton = ({ setOpenMenu, dark }: MenuToggleButtonProps) => {
   );
 };
 
-const MenuContainer = styled.div<{ dark: boolean }>`
+const MenuContainer = styled.div<{ dark: DarkType }>`
   margin-left: 16px;
   color: ${({ theme, dark }) => theme.backgroundColor[dark ? "white" : "paragraph"]};
 

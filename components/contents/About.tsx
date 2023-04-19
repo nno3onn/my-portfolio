@@ -95,7 +95,7 @@ const About = ({ element }: AboutProps) => {
   );
 };
 
-const InfoWrapper = styled.div<{ dark: boolean }>`
+const InfoWrapper = styled.div<{ dark: DarkType }>`
   width: 100%;
 
   display: grid;
@@ -104,6 +104,7 @@ const InfoWrapper = styled.div<{ dark: boolean }>`
   flex-flow: wrap;
 
   color: ${({ theme, dark }) => theme.fontColor[dark ? "inactive-dark" : "paragraph"]};
+
   svg {
     fill: ${({ theme, dark }) => theme.fontColor[dark ? "white" : "black"]};
   }

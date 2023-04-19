@@ -1,13 +1,18 @@
+import useDark from "@/hooks/useDark";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import styled from "styled-components";
 
 const DarkModeToggleButton = () => {
-  const { theme, setTheme } = useTheme();
-  const dark = theme === "dark";
+  const { setTheme } = useTheme();
+  const dark = useDark();
+
+  if (dark === null)
+    return <Image src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width={48} height={32} alt="" />;
 
   return (
     <>
-      <DarkButton type="button" dark={dark} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+      <DarkButton type="button" dark={dark} onClick={() => setTheme(dark ? "light" : "dark")}>
         {dark ? (
           <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
             <path
@@ -26,7 +31,7 @@ const DarkModeToggleButton = () => {
   );
 };
 
-const DarkButton = styled.button<{ dark: boolean }>`
+const DarkButton = styled.button<{ dark: DarkType }>`
   display: flex;
   align-items: center;
   justify-content: center;
