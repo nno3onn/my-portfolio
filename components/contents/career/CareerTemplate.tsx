@@ -35,7 +35,6 @@ const CareerTemplateContainer = styled.div`
   display: flex;
   gap: 40px;
   justify-content: center;
-  align-items: center;
 
   @media (max-width: 768px) {
     flex-direction: column;
