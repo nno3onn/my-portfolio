@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import useDark from "@/hooks/useDark";
+import { flexCenter } from "@/styles/flexCenter";
 
 const Footer = () => {
   const dark = useDark();
@@ -32,10 +33,8 @@ const Footer = () => {
 const FooterContainer = styled.div`
   padding: 48px 0;
 
-  display: flex;
+  ${flexCenter}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 const FooterBody = styled.div`

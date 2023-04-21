@@ -1,4 +1,5 @@
 import useDark from "@/hooks/useDark";
+import { flexCenter } from "@/styles/flexCenter";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import styled from "styled-components";
@@ -32,9 +33,7 @@ const DarkModeToggleButton = () => {
 };
 
 const DarkButton = styled.button<{ dark: DarkType }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${flexCenter}
 
   width: 48px;
   height: 32px;

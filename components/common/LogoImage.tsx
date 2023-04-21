@@ -1,3 +1,4 @@
+import { flexCenter } from "@/styles/flexCenter";
 import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 
@@ -20,9 +21,7 @@ const LogoWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.fontColor.grey2};
   background-color: ${({ theme }) => theme.backgroundColor.white};
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexCenter}
 
   @media (max-width: 1024px) {
     width: 160px;

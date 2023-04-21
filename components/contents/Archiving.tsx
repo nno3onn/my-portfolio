@@ -6,6 +6,7 @@ import SectionTitleWrapper from "../common/SectionTitleWrapper";
 import ArchivingTemplate from "./Archiving/ArchivingTemplate";
 import Tistory from "./Archiving/Tistory";
 import Github from "./Archiving/Github";
+import { flexCenter } from "@/styles/flexCenter";
 
 interface ContentsTitleWrapperProps {
   logo: ReactNode;
@@ -43,10 +44,8 @@ const ArchivingContainer = styled.div`
 `;
 
 const ContentsContainer = styled.div`
-  display: flex;
+  ${flexCenter}
   flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 40px;
 
   li {

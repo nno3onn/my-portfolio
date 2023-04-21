@@ -6,6 +6,7 @@ import MenuToggleButton from "./Header/MenuToggleButton";
 import { useState } from "react";
 import useDark from "@/hooks/useDark";
 import DarkModeToggleButton from "./Header/DarkModeToggleButton";
+import { flexCenter } from "@/styles/flexCenter";
 
 interface HeaderProps {
   moveTable: Record<string, any>;
@@ -86,10 +87,8 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
   top: ${({ scrollDirection, isScrollTop }) => (isScrollTop || scrollDirection === "down" ? 0 : -81)}px;
   z-index: 2;
 
-  display: flex;
+  ${flexCenter}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   transition: top 0.2s ease-in-out;
 
