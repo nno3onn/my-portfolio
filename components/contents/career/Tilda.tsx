@@ -11,7 +11,7 @@ const Tilda = () => {
         <p>다양한 산업에 AI 기반 프로세스 최적화 솔루션을 제공하는 B2B 기업으로, 실제 비즈니스 효율을 높이는 실용적인 AI 서비스를 제공하는 업체</p>
         <br />
         <p>
-          <BoldText>Next.js 기반의 웹 프론트엔드 개발</BoldText>을 담당하였습니다.
+          <BoldText>Next.js 기반의 웹 프론트엔드 개발</BoldText>과 <BoldText>웹 디자인</BoldText>을 담당하였습니다.
         </p>
 
         <br />
