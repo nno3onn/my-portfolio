@@ -10,17 +10,18 @@ import styled from "styled-components";
 
 interface EducationTemplateProps {
   logoImage: StaticImageData;
+  bgColor?: string;
   title: string;
   date: string;
   children: ReactElement;
 }
 
-const EducationTemplate = ({ logoImage, title, date, children }: EducationTemplateProps) => {
+const EducationTemplate = ({ logoImage, bgColor, title, date, children }: EducationTemplateProps) => {
   const dark = useDark();
 
   return (
     <EducationTemplateContainer>
-      <LogoImage logoImage={logoImage} />
+      <LogoImage logoImage={logoImage} bgColor={bgColor} />
 
       <Divider />
 

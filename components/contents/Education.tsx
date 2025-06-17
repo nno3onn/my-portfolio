@@ -7,6 +7,7 @@ import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
 import Lab from "./education/Lab";
 import { RefObject } from "react";
+import Codeit from "./education/Codeit";
 
 interface EducationProps {
   element: RefObject<HTMLDivElement>;
@@ -18,6 +19,7 @@ const Education = ({ element }: EducationProps) => {
       <SectionTitleWrapper>EDUCATION</SectionTitleWrapper>
 
       <EducationList>
+        <Codeit />
         <SmileGate />
         <Sparta />
         <NaverConnect />
