@@ -4,6 +4,7 @@ import Vivasecond from "./career/Vivasecond";
 import { SectionWrapper } from "../common/SectionWrapper";
 import SectionTitleWrapper from "../common/SectionTitleWrapper";
 import { RefObject } from "react";
+import Tilda from "./career/Tilda";
 
 interface CareerProps {
   element: RefObject<HTMLDivElement>;
@@ -16,6 +17,7 @@ const Career = ({ element }: CareerProps) => {
         <SectionTitleWrapper color="black">CAREER</SectionTitleWrapper>
 
         <CompanyList>
+          <Tilda />
           <Vivasecond />
           <Ailtos />
         </CompanyList>
