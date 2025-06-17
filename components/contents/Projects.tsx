@@ -9,6 +9,8 @@ import Discord from "./projects/Discord";
 import Coorder from "./projects/Coorder";
 import MookMook from "./projects/MookMook";
 import Icoco from "./projects/Icoco";
+import DND from "./projects/DND";
+import Delog from "./projects/Delog";
 
 interface ProjectsProps {
   element: RefObject<HTMLDivElement>;
@@ -21,6 +23,8 @@ const Projects = ({ element }: ProjectsProps) => {
         <SectionTitleWrapper color="white">PROJECTS</SectionTitleWrapper>
 
         <ContentsContainer>
+          <Delog />
+          <DND />
           <Portfolio />
           <CodeFolio />
           <Discord />
