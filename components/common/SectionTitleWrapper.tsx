@@ -1,4 +1,5 @@
 import useDark from "@/hooks/useDark";
+import { FontColorKey } from "@/styles/theme";
 import { ReactNode } from "react";
 import styled from "styled-components";
 
@@ -24,8 +25,15 @@ export const TitleContainer = styled.div<{ dark: DarkType; color: string }>`
   font-weight: 900;
   line-height: 1.5;
   font-size: ${({ theme }) => theme.fontSize.xxl};
-  color: ${({ theme, dark, color }) => theme.fontColor[color ? color : dark ? "white" : "black"]};
-  border-bottom: 1px solid ${({ theme, dark, color }) => theme.fontColor[color ? color : `inactive-${dark ? "dark" : "light"}`]};
+  color: ${({ theme, dark, color }) => {
+    const key = (color || (dark ? "white" : "black")) as FontColorKey;
+    return theme.fontColor[key];
+  }};
+  border-bottom: 1px solid
+    ${({ theme, dark, color }) => {
+      const key = (color || (dark ? "inactive-dark" : "inactive-light")) as FontColorKey;
+      return theme.fontColor[key];
+    }};
 `;
 
 export default SectionTitleWrapper;

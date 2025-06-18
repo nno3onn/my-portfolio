@@ -27,7 +27,7 @@ const MenuToggleButton = ({ setOpenMenu, dark }: MenuToggleButtonProps) => {
 
 const MenuContainer = styled.div<{ dark: DarkType }>`
   margin-left: 16px;
-  color: ${({ theme, dark }) => theme.backgroundColor[dark ? "white" : "paragraph"]};
+  color: ${({ theme, dark }) => (dark ? theme.backgroundColor.white : theme.fontColor.paragraph)};
 
   cursor: pointer;
 

@@ -24,7 +24,8 @@ const DND = () => {
             </li>
             <li>팀원들과의 원활한 커뮤니케이션이 개발 속도와 완성도에 큰 영향을 준다는 것을 알게됨</li>
             <li>
-              기술적인 완성도뿐 아니라 <HighLightText>'왜 이걸 만들었는가'</HighLightText>를 고민하는 태도가 프로젝트의 방향성을 결정한다는 점을 배움
+              기술적인 완성도뿐 아니라 <HighLightText>&lsquo;왜 이걸 만들었는가&lsquo;</HighLightText>를 고민하는 태도가 프로젝트의 방향성을
+              결정한다는 점을 배움
             </li>
           </ul>
         </div>

@@ -15,7 +15,7 @@ const LogoImage = ({ logoImage, bgColor }: LogoImageProps) => {
   );
 };
 
-const LogoWrapper = styled.div<{ bgColor: string }>`
+const LogoWrapper = styled.div<{ bgColor: string | undefined }>`
   width: 240px;
   height: 240px;
   border-radius: 240px;

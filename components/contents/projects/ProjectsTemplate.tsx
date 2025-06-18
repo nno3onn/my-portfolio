@@ -2,13 +2,13 @@ import ContentsWrapper from "@/components/common/ContentsWrapper";
 import { DateWrapper } from "@/components/common/DateWrapper";
 import { DescriptionWrapper } from "@/components/common/DescriptionWrapper";
 import { SubTitleWrapper } from "@/components/common/SubTitleWrapper";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 interface ProjectsTemplateProps {
   title: string;
   date: string;
-  children: ReactElement;
+  children: ReactNode;
 }
 
 const ProjectsTemplate = ({ title, date, children }: ProjectsTemplateProps) => {

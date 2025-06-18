@@ -11,7 +11,7 @@ interface ContentsWrapperProps {
   isTransform?: boolean;
 }
 
-const ContentsWrapper = ({ title, children, width = null, height = null, padding = 24, url = "", isTransform = true }: ContentsWrapperProps) => {
+const ContentsWrapper = ({ title = "", children, width = null, height = null, padding = 24, url = "", isTransform = true }: ContentsWrapperProps) => {
   return (
     <ContentsContainer
       width={width}
